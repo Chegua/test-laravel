@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('short_name');
+            $table->string('family');
+            $table->string('unit');
+            $table->float('weight');
+            $table->float('price');
+            $table->float('min_amount');
+            $table->enum('availability', ['Disponible', 'Agotado']);
             $table->timestamps();
         });
     }

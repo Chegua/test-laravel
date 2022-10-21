@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products= Product::all();
+        $products = Product::all();
         return response()->json($products);
     }
 
@@ -27,7 +28,8 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $result= Product::create($request->all());
+
+        $result = Product::create($request->all());
 
         return response()->json($result);
     }
